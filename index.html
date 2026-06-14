@@ -1,0 +1,328 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Birthday, My World</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&family=Poppins:wght@300;400;500;600;700&family=Comic+Neue:wght@700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #fff5f7 0%, #f0f9ff 50%, #fffde7 100%);
+            color: #5a5a5a;
+            overflow-x: hidden;
+            min-height: 100vh;
+        }
+        .hero-gradient {
+            background: linear-gradient(120deg, rgba(255,182,193,0.4) 0%, rgba(135,206,235,0.4) 50%, rgba(255,255,224,0.4) 100%);
+        }
+        .cursive {
+            font-family: 'Dancing Script', cursive;
+        }
+        .fun-font {
+            font-family: 'Comic Neue', cursive;
+        }
+        .floating {
+            animation: float 6s ease-in-out infinite;
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-20px); }
+        }
+        .pulse-heart {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.1); }
+            100% { transform: scale(1); }
+        }
+        .photo-frame {
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(255, 182, 193, 0.3), 0 0 60px rgba(135, 206, 235, 0.2);
+            border: 8px solid white;
+            transition: all 0.5s ease;
+        }
+        .photo-frame:hover {
+            transform: scale(1.03);
+            box-shadow: 0 30px 60px rgba(255, 182, 193, 0.5), 0 0 80px rgba(255, 255, 224, 0.4);
+        }
+        .magic-text {
+            background: linear-gradient(90deg, #ffb6c1, #87ceeb, #ffffe0);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        .strength-card {
+            backdrop-filter: blur(10px);
+            background: rgba(255, 255, 255, 0.85);
+            border-left: 6px solid #ffb6c1;
+        }
+        .message-box {
+            background: rgba(255, 255, 255, 0.9);
+            border-radius: 25px;
+            box-shadow: 0 15px 35px rgba(255, 182, 193, 0.25);
+            border: 3px dashed #87ceeb;
+        }
+        .confetti {
+            position: fixed;
+            width: 15px;
+            height: 15px;
+            background: #ffb6c1;
+            top: -10px;
+            opacity: 0;
+        }
+        .heart {
+            color: #ff6b8b;
+            text-shadow: 0 0 10px rgba(255, 107, 139, 0.5);
+        }
+        .btn-glow {
+            background: linear-gradient(90deg, #ffb6c1, #87ceeb);
+            color: white;
+            transition: all 0.3s;
+            box-shadow: 0 5px 20px rgba(255, 182, 193, 0.6);
+        }
+        .btn-glow:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 30px rgba(135, 206, 235, 0.7);
+        }
+        .star {
+            position: absolute;
+            background-color: #ffffe0;
+            clip-path: polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%);
+            animation: twinkle 3s infinite alternate;
+        }
+        @keyframes twinkle {
+            0% { opacity: 0.3; transform: scale(0.9); }
+            100% { opacity: 1; transform: scale(1.1); }
+        }
+        .page-section {
+            scroll-margin-top: 80px;
+        }
+    </style>
+</head>
+<body class="relative">
+    <!-- Animated Background Elements -->
+    <div id="stars-container" class="fixed inset-0 pointer-events-none z-0 overflow-hidden"></div>
+    <div class="absolute top-10 left-5 w-72 h-72 bg-pink-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse"></div>
+    <div class="absolute bottom-10 right-5 w-96 h-96 bg-blue-200 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-1000"></div>
+    <div class="absolute top-1/2 left-1/3 w-64 h-64 bg-yellow-100 rounded-full mix-blend-multiply filter blur-3xl opacity-30 animate-pulse delay-500"></div>
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 py-4 px-6 hero-gradient shadow-lg backdrop-blur-md">
+        <div class="max-w-6xl mx-auto flex flex-wrap justify-between items-center">
+            <h1 class="text-2xl md:text-3xl font-bold magic-text cursive">For My Dearest Mom</h1>
+            <div class="flex space-x-4 mt-2 md:mt-0">
+                <a href="#home" class="text-pink-600 hover:text-blue-500 font-semibold transition">Home</a>
+                <a href="#photos" class="text-pink-600 hover:text-blue-500 font-semibold transition">Photos</a>
+                <a href="#strength" class="text-pink-600 hover:text-blue-500 font-semibold transition">Her Strength</a>
+                <a href="#message" class="text-pink-600 hover:text-blue-500 font-semibold transition">My Message</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section id="home" class="page-section py-16 md:py-24 px-6 relative overflow-hidden">
+        <div class="max-w-5xl mx-auto text-center">
+            <div class="floating inline-block mb-8">
+                <i class="fas fa-heart text-6xl heart pulse-heart"></i>
+            </div>
+            <h1 class="text-4xl md:text-6xl font-bold mb-6 cursive magic-text">Happy Birthday, Mummy!</h1>
+            <p class="text-xl md:text-2xl mb-10 text-gray-700 max-w-3xl mx-auto">Today is all about you—the most magical, beautiful, and loving person in my universe. You’re my baby pink, my sky blue, my lemon yellow sunshine!</p>
+            <button onclick="throwConfetti()" class="btn-glow px-8 py-3 rounded-full text-xl font-bold cursor-pointer">Celebrate Mom! <i class="ml-2 fas fa-birthday-cake"></i></button>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="photos" class="page-section py-16 px-6 bg-white/50">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 cursive magic-text">My Favorite Pictures of You</h2>
+            <p class="text-center text-gray-600 mb-10 text-lg">Every smile, every moment—you light up the world.</p>
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Placeholder for uploaded photos - replace src with actual images -->
+                <div class="photo-frame overflow-hidden">
+                    <img src="/mummy.jpeg" alt="Mom smiling" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                    <p class="p-4 text-center font-semibold text-pink-700">Your Beautiful Smile</p>
+                </div>
+                <div class="photo-frame overflow-hidden">
+                    <img src="/moment.jpeg" alt="Mom with family" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                    <p class="p-4 text-center font-semibold text-blue-700">Our Precious Moments</p>
+                </div>
+                <div class="photo-frame overflow-hidden">
+                    <img src="/joy (2).jpeg" alt="Mom laughing" class="w-full h-64 object-cover transition-transform duration-500 hover:scale-110">
+                    <p class="p-4 text-center font-semibold text-yellow-600">Your Joyful Spirit</p>
+                </div>
+    </section>
+
+    <!-- Her Strength -->
+    <section id="strength" class="page-section py-16 px-6">
+        <div class="max-w-5xl mx-auto">
+            <h2 class="text-3xl md:text-4xl font-bold text-center mb-12 cursive magic-text">The Superpowers That Make You My Hero</h2>
+            <div class="space-y-8">
+                <div class="strength-card rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-2xl font-bold text-pink-600 mb-3 flex items-center"><i class="fas fa-heart mr-3"></i> Unconditional Love</h3>
+                    <p class="text-gray-700 text-lg">Your love is my safe place—warm like baby pink, endless like the sky. You’ve taught me what it means to care without limits.</p>
+                </div>
+                <div class="strength-card rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-2xl font-bold text-blue-600 mb-3 flex items-center"><i class="fas fa-shield-alt mr-3"></i> Incredible Resilience</h3>
+                    <p class="text-gray-700 text-lg">Through every storm, you’ve stood strong, shining like a lemon yellow ray of hope. Your strength shapes my world.</p>
+                </div>
+                <div class="strength-card rounded-2xl p-6 shadow-xl">
+                    <h3 class="text-2xl font-bold text-yellow-600 mb-3 flex items-center"><i class="fas fa-magic mr-3"></i> Everyday Magic</h3>
+                    <p class="text-gray-700 text-lg">You turn ordinary days into beautiful memories—your laughter, your hugs, your advice are the magic spells that make life wonderful.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Personal Message -->
+    <section id="message" class="page-section py-16 px-6 bg-white/70">
+        <div class="max-w-4xl mx-auto">
+            <div class="message-box p-8 md:p-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-center mb-8 cursive magic-text">To My World, My Everything...</h2>
+                <div class="text-gray-800 text-lg md:text-xl space-y-6 leading-relaxed">
+                    <p>Dear Mommy,</p>
+                    <p>On your special day, I want you to know that you are the most precious gift in my life. Every prayer I whisper, every dream I dream—it all includes you. You are my baby pink comfort, my sky blue calm, my lemon yellow happiness.</p>
+                    <p>Your life around me is a beautiful story of sacrifice, love, and endless care. I see you, I appreciate you, I adore you more than words can ever say.</p>
+                    <p>You are my first home, my forever friend, and my guiding star. No matter where I go, your love is my compass.</p>
+                    <p>Today, I wish you a birthday as bright and beautiful as you are—filled with joy, laughter, and all the love you deserve multiplied by infinity.</p>
+                    <p class="text-2xl text-center mt-10 font-bold magic-text">You are my world. Happy Birthday, my beloved Mom!</p>
+                    <p class="text-right text-xl mt-10 cursive">With all my heart,<br>Your loving child <i class="fas fa-heart ml-2 heart"></i></p>
+                </div>
+                <div class="flex justify-center mt-10">
+                    <audio id="birthday-song" src="/WhatsApp Audio 2026-06-14 at 11.27.06 AM.mpeg"></audio>
+                    <button onclick="playBirthdaySong()" class="btn-glow px-8 py-3 rounded-full text-xl font-bold cursor-pointer flex items-center">
+                        <i class="fas fa-music mr-3"></i> Play Birthday Song
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-10 px-6 hero-gradient text-center">
+        <div class="max-w-4xl mx-auto">
+            <p class="text-2xl cursive magic-text mb-6">Forever grateful, forever loving you.</p>
+            <p class="text-gray-700 mb-4">Made with <i class="fas fa-heart heart"></i> for the most amazing mom in the universe.</p>
+            <p class="text-gray-600 text-sm">© A timeless tribute to my world</p>
+            <div class="mt-8 flex justify-center space-x-6 text-3xl">
+                <i class="fas fa-star text-yellow-400"></i>
+                <i class="fas fa-heart heart"></i>
+                <i class="fas fa-star text-blue-400"></i>
+                <i class="fas fa-heart heart"></i>
+                <i class="fas fa-star text-pink-400"></i>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Confetti Container -->
+    <div id="confetti-container" class="fixed inset-0 pointer-events-none z-40 overflow-hidden"></div>
+
+    <script>
+        // Create stars
+        function createStars() {
+            const container = document.getElementById('stars-container');
+            for (let i = 0; i < 80; i++) {
+                const star = document.createElement('div');
+                star.classList.add('star');
+                star.style.width = Math.random() * 15 + 5 + 'px';
+                star.style.height = star.style.width;
+                star.style.left = Math.random() * 100 + 'vw';
+                star.style.top = Math.random() * 100 + 'vh';
+                star.style.animationDelay = Math.random() * 3 + 's';
+                container.appendChild(star);
+            }
+        }
+        createStars();
+
+        // Confetti effect
+        function throwConfetti() {
+            const container = document.getElementById('confetti-container');
+            const colors = ['#ffb6c1', '#87ceeb', '#ffffe0', '#ffcccb', '#c9ffe5'];
+            for (let i = 0; i < 150; i++) {
+                const confetti = document.createElement('div');
+                confetti.classList.add('confetti');
+                confetti.style.left = Math.random() * 100 + 'vw';
+                confetti.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)];
+                confetti.style.width = Math.random() * 15 + 5 + 'px';
+                confetti.style.height = confetti.style.width;
+                container.appendChild(confetti);
+                const animation = confetti.animate([
+                    { top: '-10px', opacity: 1, transform: 'rotate(0deg)' },
+                    { top: '100vh', opacity: 0.7, transform: 'rotate(' + Math.random() * 360 + 'deg)' }
+                ], {
+                    duration: Math.random() * 3000 + 2000,
+                    easing: 'cubic-bezier(0.215, 0.610, 0.355, 1)'
+                });
+                animation.onfinish = () => confetti.remove();
+            }
+            // Play a sound (optional)
+            const audio = new Audio('https://assets.mixkit.co/sfx/preview/mixkit-happy-birthday-horn-576.mp3');
+            audio.volume = 0.3;
+            audio.play().catch(e => console.log("Audio play failed (user interaction required)."));
+        }
+
+        // Birthday song
+        function playBirthdaySong() {
+    const audio = document.getElementById('birthday-song');
+
+    audio.currentTime = 0; // start from beginning every click
+    audio.volume = 1.0;
+
+    const playPromise = audio.play();
+
+    if (playPromise !== undefined) {
+        playPromise
+            .then(() => {
+                console.log("Birthday song started");
+            })
+            .catch(error => {
+                console.error("Audio failed:", error);
+            });
+    }
+
+    throwConfetti();
+}
+
+        // Smooth scrolling
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                const targetId = this.getAttribute('href');
+                if(targetId === '#') return;
+                const targetElement = document.querySelector(targetId);
+                if(targetElement) {
+                    window.scrollTo({
+                        top: targetElement.offsetTop - 80,
+                        behavior: 'smooth'
+                    });
+                }
+            });
+        });
+
+        // Add a heart cursor effect on click
+        document.addEventListener('click', function(e) {
+            const heart = document.createElement('div');
+            heart.innerHTML = '<i class="fas fa-heart heart"></i>';
+            heart.style.position = 'fixed';
+            heart.style.left = e.clientX + 'px';
+            heart.style.top = e.clientY + 'px';
+            heart.style.fontSize = '24px';
+            heart.style.pointerEvents = 'none';
+            heart.style.zIndex = '9999';
+            document.body.appendChild(heart);
+            const animation = heart.animate([
+                { opacity: 1, transform: 'scale(1) translateY(0)' },
+                { opacity: 0, transform: 'scale(2) translateY(-40px)' }
+            ], { duration: 1000, easing: 'ease-out' });
+            animation.onfinish = () => heart.remove();
+        });
+    </script>
+</body>
+</html>
